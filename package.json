@@ -9,7 +9,11 @@
 		"index.js"
 	],
 	"scripts": {
-		"test": "node --test"
+		"test": "node --test",
+		"prepublishOnly": "npm test"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"engines": {
 		"node": ">=18"

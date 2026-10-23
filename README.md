@@ -9,10 +9,8 @@ A custom updater for [commit-and-tag-version](https://github.com/absolute-versio
 
 ## Install
 
-Install a tagged version from GitHub:
-
 ```bash
-npm install --save-dev github:ucsc/wordpress-version-updater#v1.0.0
+npm install --save-dev @ucsantacruz/wordpress-version-updater
 ```
 
 ## Use

@@ -1,0 +1,29 @@
+{
+	"name": "@ucsantacruz/wordpress-version-updater",
+	"version": "1.0.0",
+	"description": "commit-and-tag-version (or standard-version) updater for the `Version` line in WordPress plugin and theme headers.",
+	"author": "UC Santa Cruz",
+	"license": "GPL-2.0-or-later",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"scripts": {
+		"test": "node --test"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ucsc/wordpress-version-updater.git"
+	},
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"theme",
+		"version",
+		"commit-and-tag-version",
+		"standard-version"
+	]
+}

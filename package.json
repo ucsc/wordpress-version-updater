@@ -1,6 +1,6 @@
 {
 	"name": "@ucsantacruz/wordpress-version-updater",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "commit-and-tag-version (or standard-version) updater for the `Version` line in WordPress plugin and theme headers.",
 	"author": "UC Santa Cruz",
 	"license": "GPL-2.0-or-later",

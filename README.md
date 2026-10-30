@@ -1,11 +1,6 @@
-# @ucsantacruz/wordpress-version-updater
+# WordPress version updater
 
-A custom updater for [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) and standard-version. It reads and writes the `Version:` line in the header of a WordPress plugin or theme.
-
-- Only the version number changes. The padding between `Version:` and the value stays the same, so an aligned header stays aligned.
-- The leading `*` is optional. The updater works with plugin headers (` * Version: 1.0.0`) and theme `style.css` headers (`Version: 1.0.0`).
-- Each part of the version can have more than one digit, for example `2026.10.22`.
-- The updater matches `Version:` only at the start of a line.
+A custom updater for [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) and standard-version that reads and writes the version of a WordPress plugin or theme.
 
 ## Install
 
@@ -47,14 +42,6 @@ module.exports = {
 ```
 
 For a theme, use `style.css` as the `filename`.
-
-## Develop
-
-```bash
-npm test
-```
-
-The tests use the built-in Node.js test runner, so they need no dependencies.
 
 ## License
 

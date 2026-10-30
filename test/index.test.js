@@ -76,3 +76,43 @@ test( 'throws a clear error when there is no Version line', () => {
 		/No "Version:" line found/
 	);
 } );
+
+test( 'reads pre-release versions', () => {
+	for ( const version of [ '1.0.1-0', '1.0.1-alpha.0', '1.4.3-xyz.12' ] ) {
+		const contents = pluginHeader.replace( '1.4.0', version );
+		assert.equal( readVersion( contents ), version );
+	}
+} );
+
+test( 'reads versions with build metadata', () => {
+	const contents = themeHeader.replace( '2.3.4', '1.1.0-rc.1+build.5' );
+	assert.equal( readVersion( contents ), '1.1.0-rc.1+build.5' );
+} );
+
+test( 'replaces the whole pre-release suffix when it writes', () => {
+	const steps = [ '1.1.0-alpha.0', '1.1.0-alpha.1', '1.1.0-beta.0', '1.1.0' ];
+	let contents = pluginHeader;
+	for ( const version of steps ) {
+		contents = writeVersion( contents, version );
+		assert.match(
+			contents,
+			new RegExp( `^ \\* Version: {12}${ version.replace( /\./g, '\\.' ) }$`, 'm' )
+		);
+		assert.equal( readVersion( contents ), version );
+	}
+} );
+
+test( 'replaces the whole value when it is not plain SemVer', () => {
+	for ( const version of [ '1.2.3.4', '1.0.0-', '1.0.0-alpha..1' ] ) {
+		const contents = pluginHeader.replace( '1.4.0', version );
+		assert.equal( readVersion( contents ), version );
+
+		const out = writeVersion( contents, '9.9.9' );
+		assert.match( out, /^ \* Version: {12}9\.9\.9$/m );
+	}
+} );
+
+test( 'stops at the end of a comment on the same line', () => {
+	const out = writeVersion( '/*\nVersion: 1.0.0*/\n', '1.0.1' );
+	assert.equal( out, '/*\nVersion: 1.0.1*/\n' );
+} );

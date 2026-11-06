@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.0](https://github.com/ucsc/wordpress-version-updater/compare/v1.1.1...v2.0.0) (2026-11-06)
+
+### ⚠ BREAKING CHANGES
+
+* ✨ Stop the release when the version cannot be read or written. Fixes [#3](https://github.com/ucsc/wordpress-version-updater/issues/3) ([#4](https://github.com/ucsc/wordpress-version-updater/issues/4))
+
+### Features
+
+* ✨ Stop the release when the version cannot be read or written. Fixes [#3](https://github.com/ucsc/wordpress-version-updater/issues/3) ([#4](https://github.com/ucsc/wordpress-version-updater/issues/4)) ([6999b7d](https://github.com/ucsc/wordpress-version-updater/commit/6999b7df71a9bbbccd6e91b364c99de9bfb87869))
 
 ### [1.1.1](https://github.com/ucsc/wordpress-version-updater/compare/v1.1.0...v1.1.1) (2026-10-30)
 

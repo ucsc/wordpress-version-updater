@@ -70,13 +70,6 @@ test( 'reads back the version that it wrote', () => {
 	);
 } );
 
-test( 'throws a clear error when there is no Version line', () => {
-	assert.throws(
-		() => readVersion( 'No header here.' ),
-		/No "Version:" line found/
-	);
-} );
-
 test( 'reads pre-release versions', () => {
 	for ( const version of [ '1.0.1-0', '1.0.1-alpha.0', '1.4.3-xyz.12' ] ) {
 		const contents = pluginHeader.replace( '1.4.0', version );

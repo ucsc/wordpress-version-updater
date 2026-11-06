@@ -5,8 +5,12 @@
 	"author": "UC Santa Cruz",
 	"license": "GPL-2.0-or-later",
 	"main": "index.js",
+	"bin": {
+		"wordpress-version-updater": "cli.js"
+	},
 	"files": [
-		"index.js"
+		"index.js",
+		"cli.js"
 	],
 	"scripts": {
 		"test": "node --test",
